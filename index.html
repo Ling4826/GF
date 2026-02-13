@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Valentine's Surprise</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap"
+            rel="stylesheet">
+        <style>
+        :root { --ios-blue: #007AFF; --ios-pink: #FF2D55; --ios-bg: #F2F2F7; }
+        body { background-color: var(--ios-bg); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Kanit', sans-serif; overflow: hidden; }
+        .ipad-screen { width: 100%; max-width: 400px; height: 90vh; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-radius: 40px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; box-sizing: border-box; border: 1px solid rgba(255,255,255,0.3); }
+        .screen { width: 100%; display: none; flex-direction: column; align-items: center; animation: iosSlide 0.5s ease-out; }
+        .active { display: flex; }
+        h2 { color: #1C1C1E; font-size: 22px; font-weight: 600; margin-bottom: 15px; text-align: center; line-height: 1.3; }
+        p { color: #8E8E93; font-size: 15px; margin-bottom: 25px; text-align: center; }
+        img { width: 220px; height: 220px; object-fit: contain; border-radius: 20px; margin-bottom: 25px; }
+        .btn-group { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+        button { padding: 16px; font-size: 17px; border: none; border-radius: 14px; cursor: pointer; font-weight: 500; transition: all 0.2s; -webkit-tap-highlight-color: transparent; }
+        .btn-main { background-color: var(--ios-pink); color: white; }
+        .btn-secondary { background-color: #E5E5EA; color: #1C1C1E; }
+        @keyframes iosSlide { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    </style>
+    </head>
+    <body>
+
+        <div class="ipad-screen">
+            <div id="step1" class="screen active">
+                <img
+                    src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueG5wZzRnd3Jic2J4ZzRnd3Jic2J4ZzRnd3Jic2J4ZzRndyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif">
+                <h2>วันนี้คุยกันไหมครับ? ❤️</h2>
+                <div class="btn-group">
+                    <button class="btn-main"
+                        onclick="handleYes(1)">คุยค่ะ</button>
+                    <button class="btn-secondary"
+                        onclick="showStep(2)">ไม่ค่ะ</button>
+                </div>
+            </div>
+
+            <div id="step2" class="screen">
+                <img
+                    src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXRoZTM1ZTBkZG5kbngxY2ExYTlzaDZpOG5yY3g4MXo2ZnVnbnV2OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/98MaHVwJOmWMz4cz1K/giphy.gif">
+                <h2>จะไม่คุยจริงๆ หรอ... 🥺</h2>
+                <div class="btn-group">
+                    <button class="btn-main"
+                        onclick="handleYes(2)">คุยค่ะ</button>
+                    <button class="btn-secondary"
+                        onclick="showStep(3)">ไม่ค่ะ</button>
+                </div>
+            </div>
+
+            <div id="step3" class="screen">
+                <img
+                    src="https://media.tenor.com/OcTq3SfQiawAAAAM/miss-you.gif">
+                <h2>ได้โปรดเถอะนะ... <br>เค้าคิดถึงนะ BRO</h2>
+                <div class="btn-group">
+                    <button class="btn-main"
+                        onclick="handleYes(3)">คุยค่ะ</button>
+                    <button class="btn-secondary"
+                        onclick="showStep(4)">ไม่ค่ะ</button>
+                </div>
+            </div>
+
+            <div id="step4" class="screen">
+                <img
+                    src="https://media.tenor.com/aLhWtIMAG6QAAAAM/sad-depressed.gif">
+                <h2>คิดถึงตลอดเลยนะ แง่งงงงง 🥺</h2>
+                <div class="btn-group">
+                    <button class="btn-main"
+                        onclick="handleYes(4)">คุยค่ะ</button>
+                    <button class="btn-secondary"
+                        onclick="showStep(5)">ไม่ค่ะ</button>
+                </div>
+            </div>
+
+            <div id="step5" class="screen">
+                <img
+                    src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmx6bjUxOWZocGs5cnBzb2gycWt0dHJtOHB0OHlkdHU4YXlsbzFjYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JpG2A9P3dPHXaTYrwu/giphy.gif">
+                <h2>เองอยากได้เงินไหม? 💰</h2>
+                <div class="btn-group">
+                    <button class="btn-main" onclick="moneyAlert()">ใช่
+                        (เอาเงิน)</button>
+                    <button class="btn-secondary"
+                        onclick="handleYes(5)">ไม่ค่ะ</button>
+                </div>
+            </div>
+
+            <div id="step6" class="screen">
+                <img id="resultImg" src>
+                <h2 id="resultTitle"></h2>
+                <p id="resultDesc"></p>
+                <div id="specialBtnGroup" class="btn-group"></div>
+            </div>
+
+            <div id="step7" class="screen">
+                <img
+                    src="https://media.tenor.com/guT_aX7923MAAAAM/cat-cute.gif">
+                <h2>มันจะหมดแล้วนะ.... <br>ไม่อยากคุยกันจริงหรอ?</h2>
+                <div class="btn-group">
+                    <button class="btn-main"
+                        onclick="handleYes(7)">คุยค่ะ</button>
+                    <button class="btn-secondary"
+                        onclick="showStep(8)">ไม่ค่ะ</button>
+                </div>
+            </div>
+
+            <div id="step8" class="screen">
+                <img
+                    src="https://i.pinimg.com/originals/12/db/9b/12db9bd79e9503862d2311a15d03503a.gif">
+                <h2>T_T ก็ได้ครับ <br>ผมยอมแพ้แล้ว</h2>
+                <div class="btn-group">
+                    <button class="btn-main" onclick="handleYes(8)">สงสาร
+                        คุยก็ได้</button>
+                    <button class="btn-secondary"
+                        onclick="showStep(9)">ไม่ค่ะ</button>
+                </div>
+            </div>
+
+            <div id="step9" class="screen">
+                <img
+                    src="https://media.tenor.com/3GVuvdPLAsUAAAAM/stay-strong-fist-pump.gif">
+                <h2>....... สู้ๆนะครัับตั้งใจทำงาน</h2>
+                <div class="btn-group">
+                    <button class="btn-main" onclick="closeApp()"
+                        style="width: 100%;">ค่ะ</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        function showStep(n) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('step' + n).classList.add('active');
+        }
+
+function handleYes(fromStep) {
+    const resultImg = document.getElementById('resultImg');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultDesc = document.getElementById('resultDesc');
+    const specialBtnGroup = document.getElementById('specialBtnGroup');
+
+    specialBtnGroup.innerHTML = "";
+
+    if (fromStep === 1) {
+        resultImg.src = "https://media.tenor.com/EVChef0SX38AAAAM/tkthao219-bubududu.gif";
+        resultTitle.innerText = "โห! ใจตรงกันเลย";
+        resultDesc.innerText = "คุณตอบเร็วจัง ดีใจจังเลย!!! ❤️";
+    } 
+    else if (fromStep === 2) {
+        resultImg.src = "https://www.icegif.com/wp-content/uploads/2022/06/icegif-1017.gif";
+        resultTitle.innerText = "นึกว่าจะไม่ยอมซะแล้ว";
+        resultDesc.innerText = "ดีใจนะที่คุณเปลี่ยนใจมาคุยกันนะ";
+    }
+    else if (fromStep === 3) {
+        resultImg.src = "https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyZjJia2xqMGdxZGM2ZWlwcDNmc29mM2Y4ZXAzczljYXNsanJ3MnFmYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/BBBx74mQ4a5sQoZydk/giphy-downsized.gif";
+        resultTitle.innerText = "ในที่สุด BRO ก็ยอม!";
+        resultDesc.innerText = "LET GO";
+    } 
+    else if (fromStep === 4) {
+        resultImg.src = "https://media.tenor.com/H4hl0RQOsVQAAAAM/iceage-possum.gif";
+        resultTitle.innerText = "แง่งงงงงสำเร็จ!";
+        resultDesc.innerText = "ขอบคุณครับ!";
+    }
+    else if (fromStep === 5) {
+        resultImg.src = "https://i.pinimg.com/originals/17/b3/61/17b361592db30f43846196ad729ebe67.gif";
+        resultTitle.innerText = "ขอบคุณครับ";
+        resultDesc.innerText = "อย่างน้อยคุณก็ไม่เอาเงินผม....";
+        specialBtnGroup.innerHTML = `<button class="btn-main" onclick="showStep(7)">ไปต่อกันเถอะ ❤️</button>`;
+    } 
+    else if (fromStep === 8) {
+        resultImg.src = "https://www.icegif.com/wp-content/uploads/2022/06/icegif-1031.gif";
+        resultTitle.innerText = "ขอบคุณครับ...";
+        resultDesc.innerText = "🥺 ขอบคุณที่ใจอ่อนให้นะครับ";
+    } 
+    else {
+        resultImg.src = "https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUydWk0NHR2anhlYmtvaHBwejYyMnhrdm14M2g2aTNzbng2Y2lyYm8wcSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/osjgQPWRx3cac/200.gif";
+        resultTitle.innerText = "เย้! คุณตอบคุยค่ะแล้ว";
+        resultDesc.innerText = "ดีใจจังเลย! คุณเห็นด้วยแล้วสินะ!";
+    }
+    showStep(6);
+}
+
+function moneyAlert() {
+    alert('เอาจริงดิ ออออเท่าไหร่ครับ... T_T แบบยอมแพ้');
+    const resultImg = document.getElementById('resultImg');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultDesc = document.getElementById('resultDesc');
+    
+    resultImg.src = "https://www.reactiongifs.us/wp-content/uploads/2018/06/giphy-1-1.gif";
+    resultTitle.innerText = ".....";
+    resultDesc.innerText = "ยอมแพ้เลยครับ... สมเป็นคุณจริงๆ";
+    showStep(6);
+}
+        function closeApp() {
+            alert('บ๊ายบายครับ ตั้งใจทำงานนะ!');
+            window.location.href = "about:blank";
+        }
+    </script>
+    </body>
+</html>
